@@ -1,0 +1,56 @@
+/* Reset some default styles */
+html, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, form, label, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the font to a default value */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Set the page to black and white */
+body {
+    background-color: white;
+    color: black;
+}
+
+/* Apply black color to all borders */
+* {
+    border-color: black;
+}
+
+/* Style for the header bar */
+div.w-full {
+    background-color: #2B2B2B;
+    color: white;
+}
+
+/* Style for the main content */
+div.max-w-[600px] {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style for the form container */
+form {
+    margin-bottom: 5px;
+}
+
+/* Style for the text input */
+input[type="text"] {
+    border-bottom: 2px solid #2B2B2B;
+}^
+
+/* Style for the QR scanner button */
+#qr-scanner-button {
+    border: 2px solid #2B2B2B;
+    padding: 5px;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    border: 2px solid #2B2B2B;
+    padding: 5px;
+}

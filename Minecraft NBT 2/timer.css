@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial;
+    background-color: #f0f0f0;
+}
+
+#timer {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#progressContainer {
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#progressBar {
+    height: 100%;
+    background-color: white;
+    transition: width 1s linear;
+}
+
+#remainingTime {
+    position: relative;
+    color: black;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+#controlButtons {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#addButtons {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 2em;
+    margin: 0 10px;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#addButtons button {
+    font-size: 1em; /* Ändere die Schriftgröße für die Add-Buttons */
+    padding: 10px 15px; /* Ändere die Größe der Add-Buttons */
+}

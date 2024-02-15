@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Timer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial;
+            background-color: #f0f0f0;
+        }
+
+        #timer {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #progressContainer {
+            width: 100%;
+            height: 30px;
+            background-color: black;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        #progressBar {
+            height: 100%;
+            background-color: white;
+            transition: width 1s linear;
+        }
+
+        #remainingTime {
+            position: relative;
+            color: black;
+            font-size: 1.5em;
+            z-index: 1;
+        }
+
+        #controlButtons {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        #addButtons {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 2em;
+            margin: 0 10px;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #addButtons button {
+            font-size: 1em; /* Ändere die Schriftgröße für die Add-Buttons */
+            padding: 10px 15px; /* Ändere die Größe der Add-Buttons */
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+
+    <div id="progressContainer">
+        <div id="progressBar"></div>
+        <div id="remainingTime">00:00:00</div>
+    </div>
+
+    <div id="controlButtons">
+        <button id="startButton" onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resumeTimer()">Weiter</button>
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <div id="addButtons">
+        <button onclick="addSeconds()">Sekunde hinzufügen</button>
+        <button onclick="addMinutes()">Minute hinzufügen</button>
+        <button onclick="addHours()">Stunde hinzufügen</button>
+    </div>
+
+    <script>
+        let timer;
+        let totalSeconds = 0;
+        let remainingSeconds = 0;
+        let isPaused = false;
+
+        function startTimer() {
+            if (!timer) {
+                timer = setInterval(updateTimer, 1000);
+                document.getElementById('startButton').style.display = 'none';
+            }
+            document.getElementById('progressBar').style.transition = 'width 1s linear';
+            document.getElementById('progressBar').style.width = '100%';
+        }
+
+        function updateTimer() {
+            if (remainingSeconds > 0 && !isPaused) {
+                remainingSeconds--;
+                updateDisplay();
+            } else {
+                clearInterval(timer);
+                timer = null;
+                document.getElementById('startButton').style.display = 'inline-block';
+            }
+        }
+
+        function updateDisplay() {
+            const timerElement = document.getElementById('timer');
+            const remainingTimeElement = document.getElementById('remainingTime');
+            const progressBar = document.getElementById('progressBar');
+
+            const hours = Math.floor(remainingSeconds / 3600);
+            const minutes = Math.floor((remainingSeconds % 3600) / 60);
+            const seconds = remainingSeconds % 60;
+
+            timerElement.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+            remainingTimeElement.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+
+            const percentage = (remainingSeconds / totalSeconds) * 100;
+            progressBar.style.width = percentage + '%';
+        }
+
+        function formatTime(value) {
+            return value < 10 ? '0' + value : value;
+        }
+
+        function pauseTimer() {
+            isPaused = true;
+            document.getElementById('progressBar').style.transition = 'none';
+        }
+
+        function resumeTimer() {
+            isPaused = false;
+            document.getElementById('progressBar').style.transition = 'width 1s linear';
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = null;
+            isPaused = false;
+            totalSeconds = 0;
+            remainingSeconds = 0;
+            document.getElementById('startButton').style.display = 'inline-block';
+            updateDisplay();
+        }
+
+        function addSeconds() {
+            totalSeconds += 10;
+            remainingSeconds += 10;
+            updateDisplay();
+        }
+
+        function addMinutes() {
+            totalSeconds += 60;
+            remainingSeconds += 60;
+            updateDisplay();
+        }
+
+        function addHours() {
+            totalSeconds += 3600;
+            remainingSeconds += 3600;
+            updateDisplay();
+        }
+
+        // Füge Konsolenausgaben hinzu
+        console.log('JavaScript geladen');
+    </script>
+</body>
+</html>

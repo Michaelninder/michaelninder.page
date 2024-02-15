@@ -1,0 +1,65 @@
+<html lang="de"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>
+        Internetfreischaltung Gastnetz | Heinrich-Heine-Gymnasium Kaiserslautern
+    </title>
+    <link rel="stylesheet" href="captiveportal-style.css">
+    <link rel="stylesheet" href="wifi.css">
+    <script src="captiveportal-main.js"></script>
+</head>
+<body>
+
+<div>
+    <div class="w-full h-[45px] bg-[#2B2B2B] px-[15px] text-white text-xs uppercase flex items-center">
+        <div class="align-bottom truncate">Heinrich-Heine-Gymnasium Kaiserslautern</div>
+    </div>
+    <div class="flex justify-between items-center gap-[15px] min-h-[100px] border-b-[1px] border-black px-[15px]">
+        <img src="captiveportal-logo.png" alt="HHG" class="h-[100px] py-[15px]">
+        <div>
+            <h1 class="text-2xl lg:text-4xl font-semibold text-right">Internetfreischaltung Gastnetz</h1>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-[600px] mx-auto px-[15px] my-5">
+
+    
+        
+    <div>
+        <form action="https://anmeldung2.hhg-kl.de:8005/index.php?zone=hhg_gaeste" method="post">
+            <p class="mb-5">Schalten Sie Ihr Gerät für den Internetzugang frei. Freischaltcodes erhalten Sie im Sekretariat 1 sowie im Internat 1.</p>
+            <div class="flex flex-col gap-y-[15px]">
+
+                
+                                    <label class="block">
+                        <input type="text" name="auth_voucher" id="voucher-input" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" placeholder="Freischaltcode" autocomplete="off" autocapitalize="off" spellcheck="false" required="">
+                    </label>
+
+                    <div id="qr-scanner-container" class="flex flex-col gap-y-[15px]">
+    <div id="qr-scanner-video-container" class="w-full hidden">
+        <video id="qr-scanner-video"></video>
+    </div>
+    <button type="button" id="qr-scanner-button" class="border-2 border-black py-[5px]">QR Code scannen</button>
+    <div id="qr-scanner-error" class="hidden text-[red]">
+        <strong>Kamerafehler.</strong> Bitte Kameraberechtigung erteilen und die Webseite neu laden.
+    </div>
+</div>
+                
+                <input name="redirurl" type="hidden" value="http://edge-http.microsoft.com/captiveportal/generate_204">
+                <input name="zone" type="hidden" value="hhg_gaeste">
+
+                <button type="submit" name="accept" value="Continue" class="border-2 border-black py-[5px]">
+                    Freischalten
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+
+=""
+</body></html>

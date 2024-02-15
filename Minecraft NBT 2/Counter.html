@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Stoppuhr</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        #counter {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        button, #toTimerPage {
+            font-size: 2.5em;
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none; /* Entfernt die Unterstreichung */
+        }
+
+        .button-container {
+            display: flex;
+        }
+
+        #toTimerPage {
+            font-size: 2em;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="counter">00:00:00</div>
+    <div class="button-container">
+        <button id="startButton" onclick="startCounter()">Start</button>
+        <button id="pauseButton" onclick="pauseCounter()">Pause</button>
+        <button id="resumeButton" onclick="resumeCounter()">Weiter</button>
+        <button id="resetButton" onclick="resetCounter()">Reset</button>
+    </div>
+
+    <a href="timer.html" id="toTimerPage">Zum Timer</a>
+
+    <script>
+        let timer;
+        let isPaused = false;
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+        let milliseconds = 0;
+
+        function startCounter() {
+            if (!timer) {
+                timer = setInterval(updateCounter, 10);
+                document.getElementById('startButton').style.display = 'none';
+                document.getElementById('resumeButton').style.display = 'none';
+            }
+            isPaused = false;
+        }
+
+        function updateCounter() {
+            milliseconds += 10;
+
+            if (milliseconds === 1000) {
+                milliseconds = 0;
+                seconds++;
+
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+
+                    if (minutes === 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+            }
+
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const counterElement = document.getElementById('counter');
+            counterElement.textContent = padZero(hours) + ':' + padZero(minutes) + ':' + padZero(seconds) + ':' + padZero(milliseconds);
+        }
+
+        function padZero(value) {
+            return value < 10 ? '0' + value : value;
+        }
+
+        function pauseCounter() {
+            clearInterval(timer);
+            isPaused = true;
+            document.getElementById('resumeButton').style.display = 'inline-block';
+        }
+
+        function resumeCounter() {
+            if (isPaused) {
+                timer = setInterval(updateCounter, 10);
+                isPaused = false;
+                document.getElementById('startButton').style.display = 'none';
+                document.getElementById('resumeButton').style.display = 'none';
+            }
+        }
+
+        function resetCounter() {
+            clearInterval(timer);
+            timer = null;
+            isPaused = false;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+            milliseconds = 0;
+            updateDisplay();
+            document.getElementById('startButton').style.display = 'inline-block';
+            document.getElementById('resumeButton').style.display = 'none';
+        }
+
+        // Füge Konsolenausgaben hinzu
+        console.log('JavaScript geladen');
+    </script>
+</body>
+</html>

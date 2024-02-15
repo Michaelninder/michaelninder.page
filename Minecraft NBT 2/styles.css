@@ -1,0 +1,58 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: rgb(30, 47, 47);
+  }
+  
+  h4{
+    color:bisque
+  }
+  .sidenav {
+    margin-top: 7%;
+    margin-left: 2%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: azure;
+    overflow-x: hidden;
+    padding: 8px 0;
+    border: 4px dashed pink;
+    border-radius: 15px;
+  }
+  
+  .sidenav a {
+    padding: 10px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    border-spacing: 10px;
+    color: #29567d;
+    background:rgba(106, 170, 219, 0.51);
+    border-radius: 20px;
+    box-sizing: border-box;
+    width: 375px;
+  }
+  
+  .main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px)   {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .cookieAccepter {
+    text-wrap: nowrap;
+    color: bisque;
+    background-color: rgb(54, 60, 65);
+    display: none;
+    border-radius: 30%;
+  }

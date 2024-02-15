@@ -1,0 +1,32 @@
+body{
+    background-color: azure;
+    color: rgb(11, 10, 10);
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+.h1_1{
+    color: blueviolet;
+    background-color: aquamarine;
+}
+.mittig{
+    margin-left: 22%;
+    margin-right: 22%;
+}
+.Mitte{
+    margin: left 11%;
+    margin-right: 11%;
+}
+img {
+position: absolute;
+/*left: 15%;
+top: 15%;*/
+z-index: +10;
+width: 99%;
+height: 200%;
+
+}
+.foot{
+    background-color: black;
+    color:aliceblue;
+    margin-top: 425px;
+
+}
