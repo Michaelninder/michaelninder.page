@@ -176,9 +176,9 @@
 }
 
 .DC-button a:hover {
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: #152569;
-  color:#6d87f7;
+  color:#b5c3ff;
 }
 .DC-button {
   text-align: right;
