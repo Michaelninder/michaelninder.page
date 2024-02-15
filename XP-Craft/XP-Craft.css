@@ -176,7 +176,8 @@
 }
 
 .DC-button a:hover {
-  background-color: #021878;
+  padding: 12px 24px;
+  background-color: #152569;
   color:#6d87f7;
 }
 .DC-button {
