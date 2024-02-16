@@ -185,7 +185,7 @@
   margin-top: 5px;
 }
 }
-.YT-button a {
+.YouTube-button a {
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
@@ -195,12 +195,12 @@
   transition: background-color 0.6s;
 }
 
-.YT-button a:hover {
+.YouTube-button a:hover {
   padding: 10px 20px;
   background-color: #660909;
   color:#9c9797;
 }
-.YT-button {
+.YouTube-button {
   text-align: left;
   margin-top: 5px;
 }
