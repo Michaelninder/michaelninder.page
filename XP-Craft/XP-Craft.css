@@ -196,7 +196,10 @@
   background-color: #eb4034;
   color:#ffffff; ;
   border-radius: 6px;
-  transition: padding 1.2s;
+  transition: 
+    padding 1.2s,
+    color 1.2s,
+    background-color1.1s;
 }
 
 .YouTube-button a:hover {
@@ -215,7 +218,10 @@
   background-color: #eb4034;
   color:#ffffff; ;
   border-radius: 6px;
-  transition: padding 1.2s;
+  transition: 
+    padding 1.2s,
+    color 1.2s,
+    background-color1.1s;
 }
 
 .YouTube a:hover {
