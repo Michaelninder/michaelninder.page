@@ -175,7 +175,7 @@
   transition: 
     padding 1.2s,
     color 1.2s,
-    background-color1.1s;
+    background-color 1s;
   
 }
 
@@ -199,7 +199,7 @@
   transition: 
     padding 1.2s,
     color 1.2s,
-    background-color1.1s;
+    background-color 1s;
 }
 
 .YouTube-button a:hover {
@@ -221,7 +221,7 @@
   transition: 
     padding 1.2s,
     color 1.2s,
-    background-color1.1s;
+    background-color 1s;
 }
 
 .YouTube a:hover {
