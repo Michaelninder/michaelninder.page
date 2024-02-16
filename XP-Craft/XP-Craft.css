@@ -173,8 +173,6 @@
   color:#021878; ;
   border-radius: 6px;
   transition: padding 1.2s;
-  transition: color 1s;
-  transition: background-color 1s;
   
 }
 
@@ -196,8 +194,6 @@
   color:#ffffff; ;
   border-radius: 6px;
   transition: padding 1.2s;
-  transition: color 1s;
-  transition: background-color 1s;
 }
 
 .YouTube-button a:hover {
@@ -217,8 +213,7 @@
   color:#ffffff; ;
   border-radius: 6px;
   transition: padding 1.2s;
-  transition: color 1s;
-  transition: background-color 1s;}
+}
 
 .YouTube a:hover {
   padding: 20px 40px;
