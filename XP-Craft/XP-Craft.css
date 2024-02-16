@@ -154,11 +154,16 @@
   background-color: bisque;
   color:#263038; ;
   border-radius: 6px;
-  transition: background-color 0.6s;
+  transition: 
+    padding 1.2s,
+    color 1.2s,
+    background-color 1s,
+    border-radius 1s;
 }
 
 .home-button a:hover {
   background-color: #263038;
+  padding: 20px 30px;
   color:bisque;
 }
 .home-button {
