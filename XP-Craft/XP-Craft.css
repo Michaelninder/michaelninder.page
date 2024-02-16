@@ -172,7 +172,10 @@
   background-color: #6d87f7;
   color:#021878; ;
   border-radius: 6px;
-  transition: padding 1.2s;
+  transition: 
+    padding 1.2s,
+    color 1.2s,
+    background-color1.1s;
   
 }
 
