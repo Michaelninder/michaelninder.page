@@ -181,10 +181,10 @@
 }
 
 .DC-button a:hover {
-  padding: 30px 60px;
+  padding: 20px 30px;
   background-color: #152569;
   color:#b5c3ff;
-  border-radius: 36px;
+  border-radius: 9px;
 }
 .DC-button {
   text-align: right;
@@ -206,7 +206,7 @@
 }
 
 .YouTube-button a:hover {
-  padding: 20px 40px;
+  padding: 20px 30px;
   background-color: #660909;
   color:#9c9797;
   border-radius: 12px;
@@ -230,7 +230,7 @@
 }
 
 .YouTube a:hover {
-  padding: 20px 40px;
+  padding: 20px 30px;
   background-color: #660909;
   color:#9c9797;
   border-radius: 12px;
