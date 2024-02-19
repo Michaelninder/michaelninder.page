@@ -175,8 +175,8 @@
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
-  background-color: #6d87f7;
-  color:#021878; ;
+  background-color: #152569;
+  color:#021878;
   border-radius: 6px;
   transition: 
     padding 1.2s,
@@ -188,8 +188,8 @@
 
 .DC-button a:hover {
   padding: 20px 30px;
-  background-color: #152569;
-  color:#b5c3ff;
+  background-color: #6d87f7;
+  color:#021878;
   border-radius: 9px;
 }
 .DC-button {
