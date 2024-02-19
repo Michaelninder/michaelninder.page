@@ -99,25 +99,25 @@
     .sidenav a {font-size: 18px;}
   }
   h2{
-    color: bisque;
+    color: #ffffff;
     font-style: normal;
     margin-left: 33%;
   }
   h3{
-    color: bisque;
+    color: #ffffff;
     margin-top:35px ;
     margin-left: 25px;
   }
   .normal_line_table{
-    color:bisque;
+    color: #ffffff;
     margin-left: 11%;
   }
   .normal_text{
-    color:bisque;
+    color: #ffffff;
     margin-left: 16%;
   }
   .Links_unten{
-    color: lightgreen;
+    color: #ff0000;
     margin-left: 84%;
     font-size: larger;
   }
