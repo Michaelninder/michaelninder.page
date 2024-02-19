@@ -225,8 +225,8 @@
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
-  background-color: #eb4034;
-  color:#ffffff; ;
+  background-color: #660909;
+  color: #9c9797;
   border-radius: 6px;
   transition: 
     padding 1.2s,
@@ -237,8 +237,8 @@
 
 .YouTube a:hover {
   padding: 20px 30px;
-  background-color: #660909;
-  color:#9c9797;
+  background-color: #eb4034;
+  color: #ffffff;
   border-radius: 12px;
 }
 .YouTube {
