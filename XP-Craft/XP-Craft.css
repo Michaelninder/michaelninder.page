@@ -271,13 +271,13 @@
 
 .flex-item-list {
   background-color: dodgerblue;
-  padding: 10px;
+  padding: 7px;
   flex: 13%;
 }
 
 .flex-item-right {
   background-color: #263038;
-  padding: 10px;
+  padding: 6px;
   flex: 87%;
 }
 
