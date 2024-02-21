@@ -297,9 +297,9 @@
 		color: #3079ed; font-weight:bold; font-size:3em;
 		
 		animation-name: focus-in-contract;
-		animation-duration: 1s;
+		animation-duration: 1.2s;
 		animation-timing-function: linear;
-		animation-delay: 0s;
+		animation-delay: 5s;
 		animation-iteration-count: 1;
 		animation-direction: normal;
 		animation-fill-mode: none;
@@ -310,8 +310,18 @@
 	@keyframes focus-in-contract {
 			
 		0% {
-			letter-spacing:1em;
+			letter-spacing:11em;
 			filter:blur(12px);
+			opacity:0;
+		}
+		10% {
+			letter-spacing:10em;
+			filter:blur(12px);
+			opacity:0;
+		}
+		90% {
+			letter-spacing:1em;
+			filter:blur(1px);
 			opacity:0;
 		}
 		100% {
