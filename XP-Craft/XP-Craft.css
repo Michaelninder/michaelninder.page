@@ -272,12 +272,12 @@
 .flex-item-list {
   background-color: dodgerblue;
   padding: 5px;
-  flex: 15%;
+  flex: 17%;
 }
 
 .flex-item-right {
   background-color: #263038;
-  flex: 85%;
+  flex: 83%;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
