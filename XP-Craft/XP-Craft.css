@@ -287,3 +287,35 @@
     flex: 100%;
   }
 }
+	div.Animation-Text-Michaelninder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+	.Text-Michaelninder {
+		color: #3079ed; font-weight:bold; font-size:3em;
+		
+		animation-name: focus-in-contract;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none;
+			
+		/* shorthand
+		animation: focus-in-contract 1s linear 0s 1 normal none;*/
+	}
+	@keyframes focus-in-contract {
+			
+		0% {
+			letter-spacing:1em;
+			filter:blur(12px);
+			opacity:0;
+		}
+		100% {
+			filter:blur(0);
+			opacity:1;
+		}
+	}
