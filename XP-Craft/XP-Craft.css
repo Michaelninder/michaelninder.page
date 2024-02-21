@@ -310,18 +310,8 @@
 	@keyframes focus-in-contract {
 			
 		0% {
-			letter-spacing:11em;
-			filter:blur(12px);
-			opacity:0;
-		}
-		10% {
-			letter-spacing:10em;
-			filter:blur(12px);
-			opacity:0;
-		}
-		90% {
 			letter-spacing:1em;
-			filter:blur(1px);
+			filter:blur(12px);
 			opacity:0;
 		}
 		100% {
