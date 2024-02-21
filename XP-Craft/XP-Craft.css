@@ -319,3 +319,19 @@
 			opacity:1;
 		}
 	}
+.sidebar-Michaelninder-1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.sidebar-Michaelninder-1 > :first-child {
+  flex-basis: 12%; 
+  flex-grow: 1;
+}
+
+.sidebar-Michaelninder-1 > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 70%;
+}
