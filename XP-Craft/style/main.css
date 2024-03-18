@@ -7,6 +7,10 @@ body {
     text-align: center;
 }
 
+h2 {
+    color: red
+}
+
 a {
     text-decoration: none;
     color: dimgray;
