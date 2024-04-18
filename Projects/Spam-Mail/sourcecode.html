@@ -105,6 +105,123 @@ else:
     <br>
     <button clas="copy-btn" onclick="kopieren()">Copy</button>
 
+<table style="width:50%">
+  <tr>
+    <td>
+    <textarea id="code" readonly>import pandas as pd
+import probability
+train_data = pd.read_csv('spam.csv')
+prb = probability.calc_probablity(train_data)
+data = pd.read_csv('test.csv')
+spam = 1
+unk = data['unbekannter Absender'].tolist()[0]
+asp = data['Ansprache'].tolist()[0]
+btf = data['Betreff'].tolist()[0]
+vlk = data['Verlinkungen'].tolist()[0]
+anh = data['Anhang'].tolist()[0]
+fsp = data['Fremdsprache'].tolist()[0]
+len = data['Länge'].tolist()[0]
+fqt = data['Fehlerquote'].tolist()[0]
+print(prb)
+#positiv
+#
+if unk == 'Nein':
+    spam = spam * (2 - prb[0])
+    print(spam)
+if btf == 'Ja':
+    spam = spam * (2 - prb[1])
+if vlk == 'Nein':
+    spam = spam * (2 - prb[2])
+if anh == 'Nein':
+    spam = spam * (2 - prb[3])
+    print(spam)
+if fsp == 'Nein':
+    spam = spam * (2 - prb[4])
+    print(spam)
+
+#
+# negativ
+if unk == 'Ja':
+    spam = spam * prb[0]
+    print(spam)
+if btf == 'Nein':
+    spam = spam * prb[1]
+if vlk == 'Ja':
+    spam = spam * prb[2]
+if anh == 'Ja':
+    spam = spam * prb[3]
+    print(spam)
+if fsp == 'Ja':
+    spam = spam * prb[4]
+    print(spam)
+if spam < 0.5:
+    print("SPAM")
+    print(spam)
+else:
+    print("NOT SPAM")
+    print(spam)
+            </textarea>
+    <br>
+    <button clas="copy-btn" onclick="kopieren()">Copy</button></td>
+    <td>Tobias</td>
+    <td>
+    <textarea id="code" readonly>import pandas as pd
+import probability
+train_data = pd.read_csv('spam.csv')
+prb = probability.calc_probablity(train_data)
+data = pd.read_csv('test.csv')
+spam = 1
+unk = data['unbekannter Absender'].tolist()[0]
+asp = data['Ansprache'].tolist()[0]
+btf = data['Betreff'].tolist()[0]
+vlk = data['Verlinkungen'].tolist()[0]
+anh = data['Anhang'].tolist()[0]
+fsp = data['Fremdsprache'].tolist()[0]
+len = data['Länge'].tolist()[0]
+fqt = data['Fehlerquote'].tolist()[0]
+print(prb)
+#positiv
+#
+if unk == 'Nein':
+    spam = spam * (2 - prb[0])
+    print(spam)
+if btf == 'Ja':
+    spam = spam * (2 - prb[1])
+if vlk == 'Nein':
+    spam = spam * (2 - prb[2])
+if anh == 'Nein':
+    spam = spam * (2 - prb[3])
+    print(spam)
+if fsp == 'Nein':
+    spam = spam * (2 - prb[4])
+    print(spam)
+
+#
+# negativ
+if unk == 'Ja':
+    spam = spam * prb[0]
+    print(spam)
+if btf == 'Nein':
+    spam = spam * prb[1]
+if vlk == 'Ja':
+    spam = spam * prb[2]
+if anh == 'Ja':
+    spam = spam * prb[3]
+    print(spam)
+if fsp == 'Ja':
+    spam = spam * prb[4]
+    print(spam)
+if spam < 0.5:
+    print("SPAM")
+    print(spam)
+else:
+    print("NOT SPAM")
+    print(spam)
+            </textarea>
+    <br>
+    <button clas="copy-btn" onclick="kopieren()">Copy</button></td>
+  </tr>
+</table>
     <script>
         function kopieren() {
             var codeText = document.getElementById("code");
