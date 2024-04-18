@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Abonnentenzähler</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .counter {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Abonnentenzähler</h1>
+    <div class="counter" id="subscriber-count">Loading...</div>
+
+    <script>
+        function fetchSubscriberCount() {
+            const channelUrl = 'https://www.youtube.com/@michaelninder';
+            fetch(channelUrl)
+                .then(response => response.text())
+                .then(data => {
+                    const match = data.match(/subscriber-count.*?>([\d,]+)<\//);
+                    const subscriberCount = match ? match[1] : 'Error';
+                    document.getElementById('subscriber-count').textContent = subscriberCount + ' subscribers';
+                })
+                .catch(error => {
+                    console.error('Error fetching subscriber count:', error);
+                    document.getElementById('subscriber-count').textContent = 'Error fetching subscriber count';
+                });
+        }
+
+        // Initial fetch
+        fetchSubscriberCount();
+
+        // Update subscriber count every 30 seconds
+        setInterval(fetchSubscriberCount, 30000);
+    </script>
+</body>
+</html>
