@@ -106,8 +106,8 @@ footer {
 #scrollToTopBtn {
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 3.3%;
+    right: 3.3%;
     background-color: #333333;
     color: #ffffff;
     border: none;
