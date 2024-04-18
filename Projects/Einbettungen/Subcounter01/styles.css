@@ -1,0 +1,15 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.counter {
+    font-size: 36px;
+    margin-top: 20px;
+}
