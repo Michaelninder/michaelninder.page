@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michaelninder Apply</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style-type: none;
+            padding: 0;
+        }
+        .option {
+            width: 200px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .option:hover {
+            background-color: #555555;
+            cursor: pointer;
+        }
+        .option img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bitte wählen Sie eine Option:</h1>
+        <ul class="options">
+            <li class="option" onclick="window.location.href='link_zu_cutter.html'">
+                <img src="fotografien.png" alt="www.flaticon.com/de/kostenloses-icon/fotografieren_2201603?related_id=2201583&origin=search">
+                <h3>Cutter</h3>
+            </li>
+            <li class="option" onclick="window.location.href='link_zu_web_developer.html'">
+                <img src="web_developer_logo.png" alt="Web Developer Logo">
+                <h3>Web Developer</h3>
+            </li>
+            <li class="option" onclick="window.location.href='link_zu_plugin_developer.html'">
+                <img src="plugin_developer_logo.png" alt="Plugin Developer Logo">
+                <h3>Plugin Developer</h3>
+            </li>
+            <li class="option" onclick="window.location.href='link_zu_animator.html'">
+                <img src="animator_logo.png" alt="Animator Logo">
+                <h3>Animator</h3>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
