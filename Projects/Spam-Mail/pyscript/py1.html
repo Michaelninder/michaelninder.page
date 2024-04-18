@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+    <input type="color" id="color-picker">
+    <div id="text" style="font-size: 48px">Hello World!</div>
+    <py-script>
+from js import document
+from pyodide.ffi import create_proxy
+color_picker = document.getElementById("color-picker")
+text = document.getElementById("text")
+def on_color_change(event):
+    text.style.color = event.target.value
+color_picker.addEventListener("change", create_proxy(on_color_change))
+    </py-script>
+  </body>
+</html>				
