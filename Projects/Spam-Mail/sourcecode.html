@@ -10,6 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="description" content="Spam E-Mail detector" /> 
         <link rel="icon" href="mail-icon.png" type="image/x-icon">
+    	<style>
+        	#code {
+            	width: 400px;
+            	height: 200px;
+            	resize: none;
+        	}
+    	</style>
     </head>
     
     <body>
@@ -42,40 +49,24 @@
 			
 				<!--Code-->
 		
-    <form>
-        <label>main.py</label>
-        <input type="text" name="name" value="<code>button</code>">
-          <br><br>
- 
-        <label>E-mail:</label>
-        <input type="email" name="emailaddress">
-          <br><br>
- 
-        <label>Password: </label>
-        <input type="password" name="password">
-          <br><br>
- 
-        <input type="submit">
-    </form>
-			
-    <form>
-        <label>main.py</label>
-        <input type="text" name="name" value="value">
-          <br><br>
- 
-        <label>E-mail:</label>
-        <input type="email" name="emailaddress">
-          <br><br>
- 
-        <label>Password: </label>
-        <input type="password" name="password">
-          <br><br>
- 
-        <input type="submit">
-    </form>
-			
-			
-			
+    <textarea id="code" readonly>
+# Hier ist dein Python-Code:
+def hallo_welt():
+    print("Hallo Welt!")
+
+hallo_welt()
+            </textarea>
+    <br>
+    <button onclick="kopieren()">Kopieren</button>
+
+    <script>
+        function kopieren() {
+            var codeText = document.getElementById("code");
+            codeText.select();
+            document.execCommand("copy");
+            alert("Code wurde kopiert!");
+        }
+    </script>
 			
 			<!--foot-->
             <div class="row block-bg">
