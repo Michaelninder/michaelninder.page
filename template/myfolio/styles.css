@@ -102,3 +102,31 @@ footer {
 .content {
     animation: fadeInUp 1s ease forwards;
 }
+/* Scroll "hoch" Button */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555555;
+}
+
+#scrollToTopBtn.show {
+    display: block;
+}
+
+/* Aktiver Link in der Navigation */
+nav ul li a.active {
+    color: #66c2ff;
+}
