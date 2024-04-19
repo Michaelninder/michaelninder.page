@@ -130,3 +130,7 @@ footer {
 nav ul li a.active {
     color: #66c2ff;
 }
+/*Kontakdaten Farbe*/
+.contact {
+    color: #8dc7af;
+}
