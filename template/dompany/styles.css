@@ -349,3 +349,29 @@ input:checked + .slider:before {
     transform: translateX(26px);
     background-color: black; /* Farbe des Schalters im eingeschalteten Zustand */
 }
+/* Cookie-Benachrichtigung */
+.cookie-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none; /* standardmäßig ausgeblendet */
+    z-index: 1000;
+}
+
+.cookie-notification button {
+    background-color: #ffd700;
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cookie-notification button:hover {
+    background-color: #ffcc00;
+}
