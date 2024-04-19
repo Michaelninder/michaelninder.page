@@ -11,6 +11,7 @@
         <div class="logo">
             <img src="logo.png" alt="dompany Logo">
         </div>
+        <button class="menu-toggle" onclick="toggleNav()">☰</button>
         <nav>
             <ul>
                 <li><a href="#about">About Us</a></li>
@@ -125,5 +126,11 @@
         <p>&copy; 2024 dompany. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        function toggleNav() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
