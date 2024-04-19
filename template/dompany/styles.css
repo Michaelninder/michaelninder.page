@@ -73,6 +73,9 @@ input:checked + .slider:before {
     padding: 15px;
     border-radius: 4px;
 }
+#scrollToTopBtn:hover {
+    background-color: #777;
+}
 #scrollToTopBtn.dark-mode {
     display: none;
     position: fixed;
@@ -82,13 +85,133 @@ input:checked + .slider:before {
     font-size: 16px;
     border: none;
     outline: none;
-    background-color: #555;
+    background-color: #777;
     color: white;
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
 }
 
-#scrollToTopBtn:hover {
-    background-color: #777;
+#scrollToTopBtn:hover.dark-mode {
+    background-color: #555;
 }
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Dark Mode styles */
+body.dark-mode {
+    background-color: #111;
+}
+
+header.dark-mode {
+    background-color: #222;
+}
+
+nav ul li a.dark-mode {
+    color: #ddd;
+}
+
+/* Hero section styles */
+#hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* About section styles */
+#about {
+    background-color: #f9f9f9;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Services section styles */
+#services {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.services-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.service {
+    margin-bottom: 40px;
+}
+
+.service img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.service p {
