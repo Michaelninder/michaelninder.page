@@ -1,82 +1,97 @@
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Spam E-Mail detector | Modellierungstage</title>
-        <link href="https://michaelninder.github.io/XP-Craft/style/bootstrap.css" rel="stylesheet" />
-        <!--link href="https://michaelninder.github.io/XP-Craft/style/main.css" rel="stylesheet" /-->
-        <link href="https://michaelninder.github.io/XP-Craft/style/font-awesome.css" rel="stylesheet" />
-        <!--link href="style.css" rel="stylesheet" /-->
-        <link href="https://michaelninder.github.io/XP-Craft/style/font-awesome.min.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="description" content="Spam E-Mail detector" /> 
-        <link rel="icon" href="mail-icon.png" type="image/x-icon">
-    </head>
-    
-    <body>
-        <div class="container-fluid">
-            <div class="header">
-                <nav class="navbar">
-                    <div class="container-fluid">
-                        <ul class="nav navbar-nav">
-                            <li><a href="https://michaelninder.github.io"><i class="fa fa-home"></i> Home</a></li>
-				<li><a href="https://michaelninder.github.io/Projects"><i class="fa fa-code"></i> Projects</a></li>
-                            <li><a href="#"><i class="fa fa-address-card"></i> michaelninder.github.io/Projects/Spam-Mail</a></li>
-				<li><a href="sourcecode.html"><i class="fa fa-code"></i> Source Code</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam E-Mail detector | Modellierungstage</title>
+    <link href="https://michaelninder.github.io/XP-Craft/style/bootstrap.css" rel="stylesheet" />
+    <!--link href="https://michaelninder.github.io/XP-Craft/style/main.css" rel="stylesheet" /-->
+    <link href="https://michaelninder.github.io/XP-Craft/style/font-awesome.css" rel="stylesheet" />
+    <!--link href="style.css" rel="stylesheet" /-->
+    <link href="https://michaelninder.github.io/XP-Craft/style/font-awesome.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Spam E-Mail detector" /> 
+    <link rel="icon" href="mail-icon.png" type="image/x-icon">
+</head>
 
-				
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="login.html"><i class="fa fa-user"></i> Log in</a></li>
-                            <li><a href="register.html"><i class="fa fa-user-plus"></i> Sing up</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="row">
-                    <div class="col-md-12 title">
-                        <h1>Python Spam E-Mail detector</h1>
-                        <hr />
-                        <h4>by <a href="https://michaelninder.github.io">Michaelninder</a> and    <a href="https://dogwaterdev.github.io">DogwaterDev</a></h4>
-                </div>
-            </div>
-			
-				<!--Python-->
-			
-			
-			
-			
-			
-			<!--foot-->
-            <div class="row block-bg">
-                <hr/>
-                <div class="col-md-4 socialmedia">
-                    <h4>Made   on</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="">April 18. -19. 2024</a></li>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://michaelninder.github.io"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="https://michaelninder.github.io/Projects"><i class="fa fa-code"></i> Projects</a></li>
+                        <li><a href="#"><i class="fa fa-address-card"></i> michaelninder.github.io/Projects/Spam-Mail</a></li>
+                        <li><a href="sourcecode.html"><i class="fa fa-code"></i> Source Code</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="login.html"><i class="fa fa-user"></i> Log in</a></li>
+                        <li><a href="register.html"><i class="fa fa-user-plus"></i> Sign up</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 socialmedia oneline">
-                    <h4>Made   by</h4>
-                    <ul style="list-style: none;">
-                        <li><h4 <a href="https://michaelninder.github.io">Michaelninder</a>  and   <a href="https://dogwaterdev.github.io">DogwaterDev</a></h4></li>
-                    </ul>
-                <!--/div>
-                <div class="col-md-4 socialmedia">
-                    <h4>Information</h4>
-                    <p>
-                       any Questions?
-                    </p>
-                    <p>
-                       Join our Discord-Server: <a href="https://discord.gg/nFMqqsFveF">Click</a>
-                    </p>
-                </div-->
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>Python Spam E-Mail detector</h1>
                 <hr />
-                <div class="col-md-12 socialmedia">
-                    <p>
-                         Design by <a href="https://michaelninder.github.io/#">Michaelninder</a>
-                    </p>
-                </div>
+                <h4>by <a href="https://michaelninder.github.io">Michaelninder</a> and    <a href="https://dogwaterdev.github.io">DogwaterDev</a></h4>
             </div>
         </div>
-    </body>
+        
+        <!--Python-->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Numbers from 1 to 99:</h2>
+                <ul id="numberList"></ul>
+            </div>
+        </div>
+        
+        <!-- JavaScript to generate numbers -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var numberList = document.getElementById("numberList");
+                for (var i = 1; i < 100; i++) {
+                    var listItem = document.createElement("li");
+                    listItem.textContent = i;
+                    numberList.appendChild(listItem);
+                }
+            });
+        </script>
+        <!--/Python-->
+        
+        <!--foot-->
+        <div class="row block-bg">
+            <hr/>
+            <div class="col-md-4 socialmedia">
+                <h4>Made   on</h4>
+                <ul style="list-style: none;">
+                    <li><a href="">April 18. -19. 2024</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 socialmedia oneline">
+                <h4>Made   by</h4>
+                <ul style="list-style: none;">
+                    <li><h4 <a href="https://michaelninder.github.io">Michaelninder</a>  and   <a href="https://dogwaterdev.github.io">DogwaterDev</a></h4></li>
+                </ul>
+            <!--/div>
+            <div class="col-md-4 socialmedia">
+                <h4>Information</h4>
+                <p>
+                    any Questions?
+                </p>
+                <p>
+                    Join our Discord-Server: <a href="https://discord.gg/nFMqqsFveF">Click</a>
+                </p>
+            </div-->
+            <hr />
+            <div class="col-md-12 socialmedia">
+                <p>
+                    Design by <a href="https://michaelninder.github.io/#">Michaelninder</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
