@@ -102,3 +102,21 @@ window.onload = function () {
     initDarkMode();
     document.getElementById("modeSwitch").addEventListener("change", toggleDarkMode);
 };
+ // Funktion zum Anzeigen des Cookie-Popups, wenn Cookies noch nicht akzeptiert wurden
+        function showCookiePopup() {
+            var cookieAccepted = localStorage.getItem('cookiesAccepted');
+            if (!cookieAccepted) {
+                var cookieNotification = document.getElementById('cookieNotification');
+                cookieNotification.style.display = 'block';
+            }
+        }
+
+        // Funktion zum Akzeptieren von Cookies und Ausblenden des Popups
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', true);
+            var cookieNotification = document.getElementById('cookieNotification');
+            cookieNotification.style.display = 'none';
+        }
+
+        // Das Popup beim Laden der Seite anzeigen
+        window.onload = showCookiePopup;
