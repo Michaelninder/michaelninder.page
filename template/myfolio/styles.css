@@ -130,7 +130,13 @@ footer {
 nav ul li a.active {
     color: #66c2ff;
 }
-/*Kontakdaten Farbe*/
+/* Kontaktdaten */
 .contact {
-    color: #8dc7af;
+    color: #8dc7af; /* Farbe für die Kontaktdaten */
+    text-decoration: none;
+    margin-right: 20px; /* Abstand zwischen den Kontak daten */
+}
+
+.contact:hover {
+    color: #66c2ff; /* Farbe ändern, wenn Maus über dem Link ist */
 }
