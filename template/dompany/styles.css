@@ -264,3 +264,45 @@ body.dark-mode #scrollToTopBtn {
 body.dark-mode #scrollToTopBtn:hover {
     background-color: #999;
 }
+/* Stile für die Sidebar */
+#sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+}
+
+#sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#sidebar ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #555;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+#sidebar ul li a:hover {
+    background-color: #555;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #333;
+}
