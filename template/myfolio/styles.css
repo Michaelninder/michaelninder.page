@@ -140,3 +140,6 @@ nav ul li a.active {
 .contact:hover {
     color: #66c2ff; /* Farbe ändern, wenn Maus über dem Link ist */
 }
+
+table {
+}
