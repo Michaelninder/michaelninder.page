@@ -41,3 +41,12 @@ contactForm.addEventListener("submit", function(event) {
     // Optionally, you can reset the form after submission
     contactForm.reset();
 });
+function toggleNav() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
