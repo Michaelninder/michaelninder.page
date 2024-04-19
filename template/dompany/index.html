@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dompany</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="dompany Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <label class="switch">
+            <input type="checkbox" id="modeSwitch">
+            <span class="slider round"></span>
+        </label>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Welcome to dompany</h1>
+                <p>Your trusted partner for all your needs.</p>
+                <a href="#contact" class="btn">Get Started</a>
+            </div>
+        </section>
+        <section id="about">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </section>
+        <section id="services">
+            <div class="services-content">
+                <h2>Our Services</h2>
+                <div class="service">
+                    <img src="service1.png" alt="Service 1">
+                    <h3>Service 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="service">
+                    <img src="service2.png" alt="Service 2">
+                    <h3>Service 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="service">
+                    <img src="service3.png" alt="Service 3">
+                    <h3>Service 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio-content">
+                <h2>Our Portfolio</h2>
+                <div class="portfolio-item">
+                    <img src="portfolio1.png" alt="Portfolio Item 1">
+                    <h3>Project 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="portfolio2.png" alt="Portfolio Item 2">
+                    <h3>Project 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="portfolio3.png" alt="Portfolio Item 3">
+                    <h3>Project 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </section>
+        <section id="team">
+            <div class="team-content">
+                <h2>Our Team</h2>
+                <div class="team-member">
+                    <img src="team1.png" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.png" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>CTO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.png" alt="Team Member 3">
+                    <h3>Michael Johnson</h3>
+                    <p>COO</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Top</button>
+    <footer>
+        <p>&copy; 2024 dompany. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
