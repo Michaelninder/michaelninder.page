@@ -4,6 +4,8 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #fff;
+    color: #333;
 }
 
 header {
@@ -264,6 +266,7 @@ body.dark-mode #scrollToTopBtn {
 body.dark-mode #scrollToTopBtn:hover {
     background-color: #999;
 }
+
 /* Stile für die Sidebar */
 #sidebar {
     position: fixed;
