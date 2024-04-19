@@ -50,3 +50,55 @@ function scrollToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+// Funktion zum Speichern des Dark-Modus-Zustands in einem Cookie
+function setDarkModeCookie(darkModeEnabled) {
+    document.cookie = "darkMode=" + (darkModeEnabled ? "enabled" : "disabled") + "; path=/";
+}
+
+// Funktion zum Lesen des Dark-Modus-Zustands aus dem Cookie
+function getDarkModeCookie() {
+    var name = "darkMode=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookieArray = decodedCookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+// Funktion zum Initialisieren des Dark-Modus-Zustands basierend auf dem Cookie
+function initDarkMode() {
+    var modeSwitch = document.getElementById("modeSwitch");
+    var darkModeCookie = getDarkModeCookie();
+    if (darkModeCookie === "enabled") {
+        modeSwitch.checked = true;
+        document.body.classList.add("dark-mode");
+    } else {
+        modeSwitch.checked = false;
+        document.body.classList.remove("dark-mode");
+    }
+}
+
+// Funktion zum Umschalten des Dark-Modus und Aktualisieren des Cookies
+function toggleDarkMode() {
+    var modeSwitch = document.getElementById("modeSwitch");
+    if (modeSwitch.checked) {
+        document.body.classList.add("dark-mode");
+        setDarkModeCookie(true);
+    } else {
+        document.body.classList.remove("dark-mode");
+        setDarkModeCookie(false);
+    }
+}
+
+// Initialisierung des Dark-Modus beim Laden der Seite
+window.onload = function () {
+    initDarkMode();
+    document.getElementById("modeSwitch").addEventListener("change", toggleDarkMode);
+};
