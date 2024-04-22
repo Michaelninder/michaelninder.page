@@ -1,3 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Command Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="generator">
+            <h2>Minecraft Command Generator</h2>
+            <div class="item-selection">
+                <label for="item">Item:</label>
+                <select id="item" onchange="updateCommand()">
+                    <option value="">-- Select Item --</option>
+                </select>
+                <input type="text" id="search" placeholder="Search..." oninput="searchItem()">
+            </div>
+            <div class="enchantments">
+                <h3>Enchantments</h3>
+                <div id="enchantments">
+                </div>
+            </div>
+            <div class="custom-name">
+                <label for="customName">Custom Name:</label>
+                <input type="text" id="customName" oninput="updateCommand()">
+            </div>
+            <div class="lores">
+                <h3>Lores</h3>
+                <div id="lores">
+                    <input type="text" id="lore0" placeholder="Enter lore" oninput="updateCommand()">
+                    <button onclick="addLore()">Add Lore</button>
+                </div>
+            </div>
+            <div class="result">
+                <h3>Result</h3>
+                <textarea id="command" readonly></textarea>
+                <button onclick="applyCommand()">Apply</button>
+            </div>
+        </div>
+        <div class="info">
+            <object type="text/html" data="colercodes.html" width="33%" height="100%"></object>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
 <!--DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +96,7 @@
 </body>
 </html-->
 
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -94,4 +143,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html>
+</html-->
