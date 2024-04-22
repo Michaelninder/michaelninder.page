@@ -15,30 +15,21 @@
             <h1>Minecraft Give Befehl Generator</h1>
             <label for="item">Item Name:</label>
             <input type="text" id="item" placeholder="z.B. minecraft:diamond_sword">
+            <datalist id="itemsList"></datalist>
             <label for="amount">Menge:</label>
             <input type="text" id="amount" placeholder="z.B. 1">
-            <label for="enchantment">Verzauberung:</label>
-            <select id="enchantment">
-                <option value="">Keine Verzauberung</option>
-                <option value="sharpness">Schärfe</option>
-                <option value="smite">Schlag</option>
-                <option value="bane_of_arthropods">Plünderung</option>
-                <option value="looting">Einsammeln</option>
-                <option value="fire_aspect">Feuerschaden</option>
-                <option value="knockback">Rückstoß</option>
-                <option value="efficiency">Effizienz</option>
-                <option value="silk_touch">Seidigkeit</option>
-                <option value="unbreaking">Haltbarkeit</option>
-                <option value="fortune">Glück</option>
-                <option value="power">Kraft</option>
-                <option value="punch">Schlag</option>
-                <option value="flame">Flamme</option>
-                <option value="infinity">Unendlichkeit</option>
-            </select>
-            <label for="enchantmentLevel">Verzauberungsstufe:</label>
-            <input type="number" id="enchantmentLevel" min="1" max="255" value="1">
+            <div id="enchantments">
+                <label>Verzauberungen:</label>
+            </div>
+            <button onclick="addEnchantment()">Verzauberung hinzufügen</button>
             <label for="lore">Beschreibung (Lore):</label>
             <input type="text" id="lore" placeholder="z.B. Epische Diamantschwert">
+            <label for="lore">Lore Lines:</label>
+            <input type="text" id="lore1" placeholder="Lore 1">
+            <input type="text" id="lore2" placeholder="Lore 2">
+            <input type="text" id="lore3" placeholder="Lore 3">
+            <input type="text" id="lore4" placeholder="Lore 4">
+            <input type="text" id="lore5" placeholder="Lore 5">
             <button onclick="generateCommand()">Befehl generieren</button>
             <div id="output"></div>
         </div>
