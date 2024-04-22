@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Give Command Generator</title>
+    <title>Minecraft Command Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="right">
-            <iframe src="information.html" width="100%" height="100%"></iframe>
-        </div>
-        <div class="left">
-            <h1>Minecraft Give Befehl Generator</h1>
-            <label for="item">Item Name:</label>
-            <input type="text" id="item" placeholder="z.B. minecraft:diamond_sword">
-            <datalist id="itemsList"></datalist>
-            <label for="amount">Menge:</label>
-            <input type="text" id="amount" placeholder="z.B. 1">
-            <div id="enchantments">
-                <label>Verzauberungen:</label>
+        <div class="generator">
+            <h2>Minecraft Command Generator</h2>
+            <div class="item-selection">
+                <label for="item">Item:</label>
+                <select id="item" onchange="updateCommand()">
+                    <option value="">-- Select Item --</option>
+                </select>
+                <input type="text" id="search" placeholder="Search..." oninput="searchItem()">
             </div>
-            <button onclick="addEnchantment()">Verzauberung hinzufügen</button>
-            <label for="lore">Beschreibung (Lore):</label>
-            <input type="text" id="lore" placeholder="z.B. Epische Diamantschwert">
-            <label for="lore">Lore Lines:</label>
-            <input type="text" id="lore1" placeholder="Lore 1">
-            <input type="text" id="lore2" placeholder="Lore 2">
-            <input type="text" id="lore3" placeholder="Lore 3">
-            <input type="text" id="lore4" placeholder="Lore 4">
-            <input type="text" id="lore5" placeholder="Lore 5">
-            <button onclick="generateCommand()">Befehl generieren</button>
-            <div id="output"></div>
+            <div class="enchantments">
+                <h3>Enchantments</h3>
+                <div id="enchantments">
+                </div>
+            </div>
+            <div class="custom-name">
+                <label for="customName">Custom Name:</label>
+                <input type="text" id="customName" oninput="updateCommand()">
+            </div>
+            <div class="lores">
+                <h3>Lores</h3>
+                <div id="lores">
+                    <input type="text" id="lore0" placeholder="Enter lore" oninput="updateCommand()">
+                    <button onclick="addLore()">Add Lore</button>
+                </div>
+            </div>
+            <div class="result">
+                <h3>Result</h3>
+                <textarea id="command" readonly></textarea>
+                <button onclick="applyCommand()">Apply</button>
+            </div>
+        </div>
+        <div class="info">
+            <object type="text/html" data="information.html" width="100%" height="100%"></object>
         </div>
     </div>
     <script src="script.js"></script>
