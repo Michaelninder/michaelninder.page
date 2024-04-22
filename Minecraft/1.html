@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Give Command Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    #container {
+        width: 80%;
+        margin: 20px auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    input[type="text"], select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>Minecraft Give Befehl Generator</h1>
+    <label for="item">Item Name:</label>
+    <input type="text" id="item" placeholder="z.B. minecraft:diamond_sword">
+    <label for="amount">Menge:</label>
+    <input type="text" id="amount" placeholder="z.B. 1">
+    <label for="enchantment">Verzauberung:</label>
+    <select id="enchantment">
+        <option value="">Keine Verzauberung</option>
+        <option value="sharpness">Schärfe</option>
+        <option value="smite">Schlag</option>
+        <option value="bane_of_arthropods">Plünderung</option>
+        <option value="looting">Einsammeln</option>
+        <option value="fire_aspect">Feuerschaden</option>
+        <option value="knockback">Rückstoß</option>
+        <option value="efficiency">Effizienz</option>
+        <option value="silk_touch">Seidigkeit</option>
+        <option value="unbreaking">Haltbarkeit</option>
+        <option value="fortune">Glück</option>
+        <option value="power">Kraft</option>
+        <option value="punch">Schlag</option>
+        <option value="flame">Flamme</option>
+        <option value="infinity">Unendlichkeit</option>
+    </select>
+    <label for="enchantmentLevel">Verzauberungsstufe:</label>
+    <input type="number" id="enchantmentLevel" min="1" max="255" value="1">
+    <label for="lore">Beschreibung (Lore):</label>
+    <input type="text" id="lore" placeholder="z.B. Epische Diamantschwert">
+    <button onclick="generateCommand()">Befehl generieren</button>
+    <div id="output"></div>
+</div>
+<script>
+    function generateCommand() {
+        var item = document.getElementById("item").value;
+        var amount = document.getElementById("amount").value;
+        var enchantment = document.getElementById("enchantment").value;
+        var enchantmentLevel = document.getElementById("enchantmentLevel").value;
+        var lore = document.getElementById("lore").value;
+        var command = "/give @p " + item + " " + amount + " 0 ";
+        if (enchantment !== "") {
+            command += "{Enchantments:[{id:\"" + enchantment + "\",lvl:" + enchantmentLevel + "}]}";
+        }
+        if (lore !== "") {
+            command += "{display:{Name:\"" + lore + "\"}}";
+        }
+        document.getElementById("output").innerHTML = "<strong>Dein Befehl lautet:</strong><br>" + command;
+    }
+</script>
+</body>
+</html>
