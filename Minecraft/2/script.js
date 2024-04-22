@@ -1157,3 +1157,161 @@ const itemsList = [
     "lore": 5
   }
 }
+let items;
+let currentEnchantments = {};
+
+// Load Minecraft items
+fetch('items.json')
+    .then(response => response.json())
+    .then(data => {
+        items = data;
+        populateItemList();
+    });
+
+// Populate item list
+function populateItemList() {
+    const itemSelect = document.getElementById('item');
+    itemSelect.innerHTML = "<option value=''>-- Select Item --</option>";
+    items.items.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item;
+        option.textContent = item.replace("minecraft:", "");
+        itemSelect.appendChild(option);
+    });
+}
+
+// Search for an item
+function searchItem() {
+    const searchValue = document.getElementById('search').value.toLowerCase();
+    const itemSelect = document.getElementById('item');
+    itemSelect.innerHTML = "<option value=''>-- Select Item --</option>";
+    items.items.forEach(item => {
+        if (item.toLowerCase().includes(searchValue)) {
+            const option = document.createElement('option');
+            option.value = item;
+            option.textContent = item.replace("minecraft:", "");
+            itemSelect.appendChild(option);
+        }
+    });
+    updateCommand();
+}
+
+// Update the command
+function updateCommand() {
+    const item = document.getElementById('item').value;
+    let command = `/give @p ${item}`;
+
+    // Add enchantments
+    for (const enchantment in currentEnchantments) {
+        const level = currentEnchantments[enchantment];
+        if (level > 0) {
+            command += ` {Enchantments:[{id:"${enchantment}",lvl:${level}}]}`;
+        }
+    }
+
+    // Add custom name
+    const customName = document.getElementById('customName').value.trim();
+    if (customName !== "") {
+        command += ` {display:{Name:'{"text":"${customName}"}'}}`;
+    }
+
+    // Add lores
+    const lores = [];
+    for (let i = 0; i < 15; i++) {
+        const lore = document.getElementById(`lore${i}`).value.trim();
+        if (lore !== "") {
+            lores.push(lore);
+        }
+    }
+    if (lores.length > 0) {
+        const loreText = lores.map(lore => `{"text":"${lore}"}`).join(",");
+        command += ` {display:{Lore:['${loreText}']}}`;
+    }
+
+    document.getElementById('command').value = command;
+}
+
+// Apply the command
+function applyCommand() {
+    const command = document.getElementById('command').value;
+    // Paste the command in the chat or console
+    console.log(command);
+}
+
+// Add a lore input field
+function addLore() {
+    const loresContainer = document.getElementById('lores');
+    const loreCount = loresContainer.childElementCount;
+    if (loreCount < 15) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.id = `lore${loreCount}`;
+        input.placeholder = 'Enter lore';
+        input.addEventListener('input', updateCommand);
+        loresContainer.insertBefore(input, loresContainer.lastElementChild);
+    }
+}
+
+// Populate enchantments for the selected item
+function populateEnchantments() {
+    const item = document.getElementById('item').value;
+    const enchantmentsDiv = document.getElementById('enchantments');
+    enchantmentsDiv.innerHTML = '';
+
+    if (item !== '') {
+        const select = document.createElement('select');
+        select.id = 'enchantmentSelection';
+        select.setAttribute('onchange', 'updateEnchantment()');
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = '-- Select Enchantment --';
+        select.appendChild(defaultOption);
+
+        for (const enchantment in items.item.enchantments) {
+            const option = document.createElement('option');
+            option.value = enchantment;
+            option.textContent = items.item.enchantments[enchantment].name;
+            select.appendChild(option);
+        }
+
+        const levelInput = document.createElement('input');
+        levelInput.type = 'number';
+        levelInput.min = 0;
+        levelInput.max = 255;
+        levelInput.value = 0;
+        levelInput.id = 'enchantmentLevel';
+        levelInput.addEventListener('input', updateEnchantment);
+
+        const addButton = document.createElement('button');
+        addButton.textContent = 'Add Enchantment';
+        addButton.addEventListener('click', addEnchantment);
+
+        enchantmentsDiv.appendChild(select);
+        enchantmentsDiv.appendChild(levelInput);
+        enchantmentsDiv.appendChild(addButton);
+    }
+
+    updateCommand();
+}
+
+// Update selected enchantment
+function updateEnchantment() {
+    const enchantment = document.getElementById('enchantmentSelection').value;
+    const level = document.getElementById('enchantmentLevel').value;
+    currentEnchantments[enchantment] = parseInt(level);
+    updateCommand();
+}
+
+// Add selected enchantment
+function addEnchantment() {
+    const enchantment = document.getElementById('enchantmentSelection').value;
+    const level = document.getElementById('enchantmentLevel').value;
+    currentEnchantments[enchantment] = parseInt(level);
+    populateEnchantments();
+}
+
+// Initial loading
+document.addEventListener('DOMContentLoaded', function () {
+    populateItemList();
+    updateCommand();
+});
