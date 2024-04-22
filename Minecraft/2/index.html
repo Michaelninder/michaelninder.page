@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,4 +45,137 @@
     </div>
     <script src="script.js"></script>
 </body>
+</html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Command Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .lore-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .lore-item {
+            width: calc(33.33% - 10px);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .lore-item:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        .lore-item input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #generateButton {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #applyButton {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minecraft Command Generator</h1>
+        <div class="lore-container" id="loreContainer">
+            <!-- Lore items will be added here dynamically -->
+        </div>
+        <button onclick="addLore()" id="addButton">Add Lore</button>
+        <button onclick="applyCommand()" id="applyButton">Apply</button>
+    </div>
+
+    <script>
+        let loreCount = 0;
+
+        function addLore() {
+            if (loreCount < 15) {
+                loreCount++;
+                let container = document.getElementById("loreContainer");
+                let div = document.createElement("div");
+                div.classList.add("lore-item");
+                div.innerHTML = `
+                    <input type="text" id="lore${loreCount}" placeholder="Enter lore ${loreCount}">
+                `;
+                container.appendChild(div);
+            } else {
+                alert("Maximum 15 lores allowed.");
+            }
+        }
+
+        function applyCommand() {
+            let command = "/give @p minecraft:stick{display:{Lore:[";
+
+            for (let i = 1; i <= loreCount; i++) {
+                let lore = document.getElementById(`lore${i}`).value.trim();
+                if (lore !== "") {
+                    command += `"${lore}",`;
+                }
+            }
+
+            command = command.replace(/,\s*$/, "");
+
+            command += "]}} 1";
+            console.log(command);
+            // Now you can apply the command as you wish
+        }
+    </script>
+</body>
 </html>
+
