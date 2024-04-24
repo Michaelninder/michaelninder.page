@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Videos</title>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-brands/css/uicons-brands.css'>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .tiktok-embed {
+    margin-bottom: 20px;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .social-icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .social-icons i:hover {
+    transform: scale(1.2);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Einbettung eines TikTok-Videos -->
+  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@michaelninder/video/7361126104217685280" data-video-id="7361126104217685280" style="max-width: 605px;min-width: 325px;">
+    <section>
+      <a target="_blank" title="@michaelninder" href="https://www.tiktok.com/@michaelninder?refer=embed">@michaelninder</a>
+      <p>Fireballfight!</p>
+      <a target="_blank" title="♬ Originalton  - Michaelninder" href="https://www.tiktok.com/music/Originalton-Michaelninder-7361126554153356065?refer=embed">♬ Originalton  - Michaelninder</a>
+    </section>
+  </blockquote>
+  <script async src="https://www.tiktok.com/embed.js"></script>
+
+  <!-- Einbettung eines YouTube-Videos -->
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <div class="social-icons">
+    <!-- Twitch-Logo -->
+    <i class="fi fi-brands-twitch"></i>
+    <!-- YouTube-Logo -->
+    <i class="fi fi-brands-youtube"></i>
+    <!-- Instagram-Logo -->
+    <i class="fi fi-brands-instagram"></i>
+  </div>
+
+</div>
+
+<script>
+  // Twitch logo hover effect
+  document.querySelector(".fi-brands-twitch").addEventListener("mouseover", function() {
+    this.style.transform = "scale(1.2)";
+  });
+  document.querySelector(".fi-brands-twitch").addEventListener("mouseout", function() {
+    this.style.transform = "scale(1)";
+  });
+
+  // YouTube logo hover effect
+  document.querySelector(".fi-brands-youtube").addEventListener("mouseover", function() {
+    this.style.transform = "scale(1.2)";
+  });
+  document.querySelector(".fi-brands-youtube").addEventListener("mouseout", function() {
+    this.style.transform = "scale(1)";
+  });
+
+  // Instagram logo hover effect
+  document.querySelector(".fi-brands-instagram").addEventListener("mouseover", function() {
+    this.style.transform = "scale(1.2)";
+  });
+  document.querySelector(".fi-brands-instagram").addEventListener("mouseout", function() {
+    this.style.transform = "scale(1)";
+  });
+</script>
+
+</body>
+</html>
