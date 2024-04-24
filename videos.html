@@ -38,7 +38,7 @@
   .social-icons i:hover {
     transform: scale(1.2);
   }
-  .dark-mode-button, .light-mode-button {
+  .mode-button {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -46,19 +46,19 @@
     border: none;
     cursor: pointer;
   }
-  .dark-mode-button i, .light-mode-button i {
+  .mode-button i {
     font-size: 24px;
   }
-  .dark-mode-button {
-    display: block;
-  }
-  .light-mode-button {
+  .dark-mode .mode-button {
     display: none;
   }
-  .dark-mode .dark-mode-button {
+  .light-mode .mode-button {
     display: none;
   }
   .dark-mode .light-mode-button {
+    display: block;
+  }
+  .light-mode .dark-mode-button {
     display: block;
   }
   .fi-brands-twitch {
@@ -67,15 +67,18 @@
   .fi-brands-youtube {
     color: red;
   }
+  .icon:hover {
+    transform: scale(1.2);
+  }
 </style>
 </head>
-<body>
+<body class="light-mode">
 
-<button class="dark-mode-button" onclick="toggleDarkMode()">
-  <i class="fi fi-sr-sun" id="darkModeIcon"></i>
+<button class="mode-button dark-mode-button" onclick="toggleDarkMode()">
+  <i class="fi fi-sr-moon" id="darkModeIcon"></i>
 </button>
-<button class="light-mode-button" onclick="toggleDarkMode()">
-  <i class="fi fi-sr-moon" id="lightModeIcon"></i>
+<button class="mode-button light-mode-button" onclick="toggleDarkMode()">
+  <i class="fi fi-sr-sun" id="lightModeIcon"></i>
 </button>
 
 <div class="container">
@@ -95,11 +98,11 @@
 
   <div class="social-icons">
     <!-- Twitch-Logo -->
-    <a target="_blank" href="https://www.twitch.tv/michaelninder_yt"><i class="fi fi-brands-twitch"></i></a>
+    <a target="_blank" href="https://www.twitch.tv/michaelninder_yt"><i class="fi fi-brands-twitch icon"></i></a>
     <!-- YouTube-Logo -->
-    <a target="_blank" href="https://youtube.com/@Michaelninder"><i class="fi fi-brands-youtube"></i></a>
+    <a target="_blank" href="https://youtube.com/@Michaelninder"><i class="fi fi-brands-youtube icon"></i></a>
     <!-- Instagram-Logo -->
-    <i class="fi fi-brands-instagram"></i>
+    <i class="fi fi-brands-instagram icon"></i>
   </div>
 
 </div>
@@ -108,18 +111,22 @@
   function toggleDarkMode() {
     const darkModeIcon = document.getElementById('darkModeIcon');
     const lightModeIcon = document.getElementById('lightModeIcon');
-    if (document.body.classList.contains('dark-mode')) {
-      document.body.classList.remove('dark-mode');
+    const body = document.body;
+
+    if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
       darkModeIcon.classList.remove('fi-mono-moon');
-      darkModeIcon.classList.add('fi-sr-sun');
+      darkModeIcon.classList.add('fi-sr-moon');
       lightModeIcon.classList.remove('fi-sr-sun');
       lightModeIcon.classList.add('fi-sr-moon');
+      body.classList.add('light-mode');
     } else {
-      document.body.classList.add('dark-mode');
-      darkModeIcon.classList.remove('fi-sr-sun');
+      body.classList.remove('light-mode');
+      darkModeIcon.classList.remove('fi-sr-moon');
       darkModeIcon.classList.add('fi-mono-moon');
-      lightModeIcon.classList.remove('fi-sr-moon');
+      lightModeIcon.classList.remove('fi-sr-sun');
       lightModeIcon.classList.add('fi-sr-sun');
+      body.classList.add('dark-mode');
     }
   }
 
