@@ -15,12 +15,18 @@
     color: #000;
     transition: background-color 0.5s ease, color 0.5s ease;
   }
+  header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: calc(100vh - 160px);
   }
   .tiktok-embed {
     margin-bottom: 20px;
@@ -49,16 +55,16 @@
   .mode-button i {
     font-size: 24px;
   }
-  .dark-mode .mode-button {
+  .dark-mode .mode-button .dark-mode-button {
     display: none;
   }
-  .light-mode .mode-button {
+  .light-mode .mode-button .light-mode-button {
     display: none;
   }
-  .dark-mode .light-mode-button {
+  .dark-mode .mode-button .light-mode-button {
     display: block;
   }
-  .light-mode .dark-mode-button {
+  .light-mode .mode-button .dark-mode-button {
     display: block;
   }
   .fi-brands-twitch {
@@ -70,16 +76,67 @@
   .icon:hover {
     transform: scale(1.2);
   }
+  nav {
+    background-color: #555;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 0 15px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+    padding-top: 10px;
+  }
+  .nav-link:hover .dropdown {
+    display: block;
+  }
+  .dropdown a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+  }
 </style>
 </head>
 <body class="light-mode">
 
-<button class="mode-button dark-mode-button" onclick="toggleDarkMode()">
-  <i class="fi fi-sr-moon" id="darkModeIcon"></i>
-</button>
-<button class="mode-button light-mode-button" onclick="toggleDarkMode()">
-  <i class="fi fi-sr-sun" id="lightModeIcon"></i>
-</button>
+<div class="mode-button">
+  <button class="dark-mode-button" onclick="toggleDarkMode()">
+    <i class="fi fi-sr-moon" id="darkModeIcon"></i>
+  </button>
+  <button class="light-mode-button" onclick="toggleDarkMode()">
+    <i class="fi fi-sr-sun" id="lightModeIcon"></i>
+  </button>
+</div>
+
+<header>
+  <h1>Header</h1>
+</header>
+
+<nav>
+  <a href="https://michaelninder.github.io/" class="nav-link"><i class="fi fi-bs-house-blank"></i> Home</a>
+  <div class="nav-link">
+    Dropdown
+    <div class="dropdown">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <a href="#" class="nav-link">Link 1</a>
+  <a href="#" class="nav-link">Link 2</a>
+  <a href="#" class="nav-link">Link 3</a>
+</nav>
 
 <div class="container">
 
@@ -106,6 +163,10 @@
   </div>
 
 </div>
+
+<footer>
+  <h3>Footer</h3>
+</footer>
 
 <script>
   function toggleDarkMode() {
