@@ -5,11 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Embedded Videos</title>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-brands/css/uicons-brands.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 <style>
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    color: #000;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   .container {
     display: flex;
@@ -34,9 +38,39 @@
   .social-icons i:hover {
     transform: scale(1.2);
   }
+  .dark-mode-button, .light-mode-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .dark-mode-button i, .light-mode-button i {
+    font-size: 24px;
+  }
+  .dark-mode-button {
+    display: block;
+  }
+  .light-mode-button {
+    display: none;
+  }
+  .dark-mode .dark-mode-button {
+    display: none;
+  }
+  .dark-mode .light-mode-button {
+    display: block;
+  }
 </style>
 </head>
 <body>
+
+<button class="dark-mode-button" onclick="toggleDarkMode()">
+  <i class="fi fi-sr-sun" id="darkModeIcon"></i>
+</button>
+<button class="light-mode-button" onclick="toggleDarkMode()">
+  <i class="fi fi-sr-moon" id="lightModeIcon"></i>
+</button>
 
 <div class="container">
 
@@ -55,9 +89,9 @@
 
   <div class="social-icons">
     <!-- Twitch-Logo -->
-    <i class="fi fi-brands-twitch"></i>
+    <a target="_blank" href="https://www.twitch.tv/michaelninder_yt"><i class="fi fi-brands-twitch"></i></a>
     <!-- YouTube-Logo -->
-    <i class="fi fi-brands-youtube"></i>
+    <a target="_blank" href="https://youtube.com/@Michaelninder"><i class="fi fi-brands-youtube"></i></a>
     <!-- Instagram-Logo -->
     <i class="fi fi-brands-instagram"></i>
   </div>
@@ -65,6 +99,24 @@
 </div>
 
 <script>
+  function toggleDarkMode() {
+    const darkModeIcon = document.getElementById('darkModeIcon');
+    const lightModeIcon = document.getElementById('lightModeIcon');
+    if (document.body.classList.contains('dark-mode')) {
+      document.body.classList.remove('dark-mode');
+      darkModeIcon.classList.remove('fi-mono-moon');
+      darkModeIcon.classList.add('fi-sr-sun');
+      lightModeIcon.classList.remove('fi-sr-sun');
+      lightModeIcon.classList.add('fi-sr-moon');
+    } else {
+      document.body.classList.add('dark-mode');
+      darkModeIcon.classList.remove('fi-sr-sun');
+      darkModeIcon.classList.add('fi-mono-moon');
+      lightModeIcon.classList.remove('fi-sr-moon');
+      lightModeIcon.classList.add('fi-sr-sun');
+    }
+  }
+
   // Twitch logo hover effect
   document.querySelector(".fi-brands-twitch").addEventListener("mouseover", function() {
     this.style.transform = "scale(1.2)";
@@ -92,3 +144,4 @@
 
 </body>
 </html>
+
