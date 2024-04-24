@@ -52,29 +52,6 @@
   .social-icons i:hover {
     transform: scale(1.2);
   }
-  .mode-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  .mode-button i {
-    font-size: 24px;
-  }
-  .dark-mode .mode-button .dark-mode-button {
-    display: none;
-  }
-  .light-mode .mode-button .light-mode-button {
-    display: none;
-  }
-  .dark-mode .mode-button .light-mode-button {
-    display: block;
-  }
-  .light-mode .mode-button .dark-mode-button {
-    display: block;
-  }
   .fi-brands-twitch {
     color: pink;
   }
@@ -109,10 +86,22 @@
     z-index: 1;
     padding-top: 10px;
   }
-  .nav-link:hover .dropdown {
+  .deep-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    padding-top: 10px;
+    left: 100%;
+    top: 0;
+  }
+  .nav-link:hover .dropdown,
+  .nav-link:hover .deep-dropdown {
     display: block;
   }
-  .dropdown a {
+  .dropdown a,
+  .deep-dropdown a {
     display: block;
     color: white;
     padding: 10px;
@@ -120,16 +109,7 @@
   }
 </style>
 </head>
-<body class="light-mode">
-
-<div class="mode-button">
-  <button class="dark-mode-button" onclick="toggleDarkMode()">
-    <i class="fi fi-sr-moon" id="darkModeIcon"></i>
-  </button>
-  <button class="light-mode-button" onclick="toggleDarkMode()">
-    <i class="fi fi-sr-sun" id="lightModeIcon"></i>
-  </button>
-</div>
+<body>
 
 <header>
   <a href="https://michaelninder.github.io/" style="color: white;"><i class="fi fi-bs-house-blank"></i> michaelninder (Videos)</a>
@@ -143,6 +123,11 @@
       <a href="#">Link 1</a>
       <a href="#">Link 2</a>
       <a href="#">Link 3</a>
+      <div class="deep-dropdown">
+        <a href="#">Deep Link 1</a>
+        <a href="#">Deep Link 2</a>
+        <a href="#">Deep Link 3</a>
+      </div>
     </div>
   </div>
   <a href="#" class="nav-link">Link 1</a>
@@ -180,54 +165,6 @@
   <h3>Socials</h3>
   <p>Ersteller: michaelninder</p>
 </footer>
-
-<script>
-  function toggleDarkMode() {
-    const darkModeIcon = document.getElementById('darkModeIcon');
-    const lightModeIcon = document.getElementById('lightModeIcon');
-    const body = document.body;
-
-    if (body.classList.contains('dark-mode')) {
-      body.classList.remove('dark-mode');
-      darkModeIcon.classList.remove('fi-mono-moon');
-      darkModeIcon.classList.add('fi-sr-moon');
-      lightModeIcon.classList.remove('fi-sr-sun');
-      lightModeIcon.classList.add('fi-sr-moon');
-      body.classList.add('light-mode');
-    } else {
-      body.classList.remove('light-mode');
-      darkModeIcon.classList.remove('fi-sr-moon');
-      darkModeIcon.classList.add('fi-mono-moon');
-      lightModeIcon.classList.remove('fi-sr-sun');
-      lightModeIcon.classList.add('fi-sr-sun');
-      body.classList.add('dark-mode');
-    }
-  }
-
-  // Twitch logo hover effect
-  document.querySelector(".fi-brands-twitch").addEventListener("mouseover", function() {
-    this.style.transform = "scale(1.2)";
-  });
-  document.querySelector(".fi-brands-twitch").addEventListener("mouseout", function() {
-    this.style.transform = "scale(1)";
-  });
-
-  // YouTube logo hover effect
-  document.querySelector(".fi-brands-youtube").addEventListener("mouseover", function() {
-    this.style.transform = "scale(1.2)";
-  });
-  document.querySelector(".fi-brands-youtube").addEventListener("mouseout", function() {
-    this.style.transform = "scale(1)";
-  });
-
-  // Instagram logo hover effect
-  document.querySelector(".fi-brands-instagram").addEventListener("mouseover", function() {
-    this.style.transform = "scale(1.2)";
-  });
-  document.querySelector(".fi-brands-instagram").addEventListener("mouseout", function() {
-    this.style.transform = "scale(1)";
-  });
-</script>
 
 </body>
 </html>
