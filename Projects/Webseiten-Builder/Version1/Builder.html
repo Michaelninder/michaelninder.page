@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webseiten-Builder</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <div class="sidebar-items">
+            <div class="sidebar-item draggable" data-item-type="heading">Heading</div>
+            <div class="sidebar-item draggable" data-item-type="textfield">Text Field</div>
+            <div class="sidebar-item draggable" data-item-type="table">Table</div>
+            <div class="sidebar-item draggable" data-item-type="image">Image</div>
+            <!-- weitere Seitenleisten-Elemente hier -->
+        </div>
+    </div>
+    <div class="canvas" id="canvas">
+        <!-- Hier können Elemente platziert werden -->
+    </div>
+    <div class="settings">
+        <h2>Settings</h2>
+        <div id="elementSettings">
+            <!-- Einstellungen für ausgewähltes Element -->
+            <h3>Element Settings</h3>
+            <div>
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor">
+            </div>
+            <div>
+                <label for="textColor">Text Color:</label>
+                <input type="color" id="textColor">
+            </div>
+            <!-- Weitere Einstellungen hier -->
+        </div>
+        <button id="generateBtn">Generate</button>
+    </div>
+    <script src="Skript.js"></script>
+    <script src="App.js"></script>
+</body>
+</html>
