@@ -7,36 +7,52 @@
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
+    <header>
+        <h1>Webseiten-Builder</h1>
+        <!-- Weitere Header-Inhalte hier -->
+    </header>
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li>
+                <a href="#">Item 1</a>
+                <ul>
+                    <li><a href="#">Subitem 1</a></li>
+                    <li><a href="#">Subitem 2</a></li>
+                    <!-- Weitere Unterpunkte hier -->
+                </ul>
+            </li>
+            <li><a href="#">Item 2</a></li>
+            <!-- Weitere Hauptpunkte hier -->
+        </ul>
+    </nav>
+    <div class="settings">
+        <h2>Settings</h2>
+        <ul>
+            <li><a href="#" id="backgroundColorLink">Background Color</a></li>
+            <li><a href="#" id="textColorLink">Text Color</a></li>
+            <!-- Weitere Einstellungen hier -->
+        </ul>
+    </div>
+    <div class="canvas" id="canvas">
+        <!-- Hier können Elemente platziert werden -->
+    </div>
     <div class="sidebar">
-        <input type="text" id="searchInput" placeholder="Search...">
+        <h2>Items</h2>
         <div class="sidebar-items">
             <div class="sidebar-item draggable" data-item-type="heading">Heading</div>
             <div class="sidebar-item draggable" data-item-type="textfield">Text Field</div>
             <div class="sidebar-item draggable" data-item-type="table">Table</div>
             <div class="sidebar-item draggable" data-item-type="image">Image</div>
-            <!-- weitere Seitenleisten-Elemente hier -->
+            <!-- Weitere Seitenleisten-Elemente hier -->
         </div>
     </div>
-    <div class="canvas" id="canvas">
-        <!-- Hier können Elemente platziert werden -->
+    <div class="preview" id="preview">
+        <!-- Hier wird die Vorschau der Webseite angezeigt -->
     </div>
-    <div class="settings">
-        <h2>Settings</h2>
-        <div id="elementSettings">
-            <!-- Einstellungen für ausgewähltes Element -->
-            <h3>Element Settings</h3>
-            <div>
-                <label for="backgroundColor">Background Color:</label>
-                <input type="color" id="backgroundColor">
-            </div>
-            <div>
-                <label for="textColor">Text Color:</label>
-                <input type="color" id="textColor">
-            </div>
-            <!-- Weitere Einstellungen hier -->
-        </div>
-        <button id="generateBtn">Generate</button>
-    </div>
+    <footer>
+        <!-- Footer-Inhalte hier -->
+    </footer>
     <script src="Skript.js"></script>
     <script src="App.js"></script>
 </body>
