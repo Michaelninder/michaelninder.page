@@ -49,7 +49,7 @@ main {
     position: fixed;
     top: 60px; /* Abstand von der Navbar */
     left: 0;
-    width: 200px; /* Breite der Seitenleiste */
+    width: 100px; /* Breite der Seitenleiste */
     height: 100%;
     background-color: #333;
     color: #fff;
