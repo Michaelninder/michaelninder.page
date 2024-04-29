@@ -27,7 +27,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
     transition: color 0.3s; /* Übergangseffekt für die Farbänderung */
 }
 
