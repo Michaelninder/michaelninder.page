@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #333; /* Dunkler Text */
 }
 
 header {
@@ -13,40 +14,28 @@ header {
     align-items: center;
 }
 
-nav ul, aside ul {
+nav ul, .sidebar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-nav ul li, aside ul li {
-    display: inline;
-    margin-right: 20px;
+nav ul li, .sidebar ul li {
+    display: block;
+    margin-bottom: 10px; /* Abstand zwischen den Listenelementen */
 }
 
-nav ul li a, aside ul li a {
+nav ul li a, .sidebar ul li a {
     text-decoration: none;
     color: #fff;
+    transition: color 0.3s; /* Übergangseffekt für die Farbänderung */
 }
 
-aside {
-    float: left;
-    width: 20%;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-
-aside ul {
-    list-style-type: none;
-}
-
-aside ul ul {
-    margin-left: 20px;
+nav ul li a:hover, .sidebar ul li a:hover {
+    color: gold; /* Goldene Farbe beim Hovern */
 }
 
 main {
-    float: left;
-    width: 80%;
     padding: 20px;
 }
 
