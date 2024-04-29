@@ -19,49 +19,26 @@
             </ul>
         </nav>
     </header>
-    <aside class="sidebar">
-        <!-- Sidebar with categories -->
-        <ul>
-            <li>Maps
-                <ul>
-                    <li>TNTRUN
-                        <ul>
-                            <li><a href="#colorful">Colorful</a></li>
-                            <li><a href="#castle">Castle</a></li>
-                            <li><a href="#ruins">Ruins</a></li>
-                        </ul>
-                    </li>
-                    <li>Skywars
-                        <ul>
-                            <li><a href="#mountain">Mountain</a></li>
-                            <li><a href="#castle-skywars">Castle</a></li>
-                            <li><a href="#noob">Noob</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Spawns
-                <ul>
-                    <li><a href="#city-spawn">City Spawn</a></li>
-                </ul>
-            </li>
-        </ul>
-    </aside>
-    <main>
-        <!-- ToDo list for Building -->
-        <h1>Maps</h1>
-        <h2>TNTRUN</h2>
-        <h3 class="completed" id="colorful">Build Colorful TNT RUN map - John Doe</h3>
-        <h3 id="castle">Build Castle TNT RUN map - Team Alpha</h3>
-        <h3 id="ruins">Design ruins for TNT RUN map - Emily Smith</h3>
-        
-        <h2>Skywars</h2>
-        <h3 id="mountain">Build Mountain Skywars map - Team Bravo</h3>
-        <h3 id="castle-skywars">Build Castle Skywars map - Jane Johnson</h3>
-        <h3 id="noob">Design Noob Skywars map - David Brown</h3>
 
-        <h1>Spawns</h1>
-        <h3 id="city-spawn">Design City Spawn - Development Team</h3>
-    </main>
+    <!-- Include Building Sidebar -->
+    <div class="content">
+        <include src="building-seitenleiste.html"></include>
+        <main>
+            <!-- ToDo list for Building -->
+            <h1>Maps</h1>
+            <h2>TNTRUN</h2>
+            <h3 id="colorful">Build Colorful TNT RUN map - John Doe</h3>
+            <h3 id="castle">Build Castle TNT RUN map - Team Alpha</h3>
+            <h3 id="ruins">Design ruins for TNT RUN map - Emily Smith</h3>
+            
+            <h2>Skywars</h2>
+            <h3 id="mountain">Build Mountain Skywars map - Team Bravo</h3>
+            <h3 id="castle-skywars">Build Castle Skywars map - Jane Johnson</h3>
+            <h3 id="noob">Design Noob Skywars map - David Brown</h3>
+
+            <h1>Spawns</h1>
+            <h3 id="city-spawn">Design City Spawn - Development Team</h3>
+        </main>
+    </div>
 </body>
 </html>
