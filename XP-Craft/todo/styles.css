@@ -14,25 +14,24 @@ header {
     align-items: center;
 }
 
-nav ul, .sidebar ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex; /* Horizontale Ausrichtung */
 }
 
-nav ul li, .sidebar ul li {
-    display: block;
-    margin-bottom: 10px; /* Abstand zwischen den Listenelementen */
-    color: #333; /* Dunkler Text */
+nav ul li {
+    margin-right: 20px; /* Abstand zwischen den Listenelementen */
 }
 
-nav ul li a, .sidebar ul li a {
+nav ul li a {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s; /* Übergangseffekt für die Farbänderung */
 }
 
-nav ul li a:hover, .sidebar ul li a:hover {
+nav ul li a:hover {
     color: gold; /* Goldene Farbe beim Hovern */
 }
 
