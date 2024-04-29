@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul, aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li, aside ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a, aside ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+aside {
+    float: left;
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside ul ul {
+    margin-left: 20px;
+}
+
+main {
+    float: left;
+    width: 80%;
+    padding: 20px;
+}
+
+.completed {
+    background-color: #cfc;
+}
