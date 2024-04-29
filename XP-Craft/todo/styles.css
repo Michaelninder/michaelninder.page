@@ -38,6 +38,7 @@ nav ul li a:hover, .sidebar ul li a:hover {
 
 main {
     padding: 20px;
+    margin-left: 220px; /* Breite der Seitenleiste plus Abstand */
 }
 
 .completed {
@@ -48,14 +49,10 @@ main {
     position: fixed;
     top: 60px; /* Abstand von der Navbar */
     left: 0;
-    width: 20%; /* 20% der Bildschirmbreite */
+    width: 200px; /* Breite der Seitenleiste */
     height: 100%;
     background-color: #333;
     color: #fff;
     padding: 20px;
     overflow-y: auto;
-}
-
-.content {
-    margin-left: 20%; /* Platzierung des Hauptinhalts neben der Seitenleiste */
 }
