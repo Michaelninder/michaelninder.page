@@ -14,24 +14,25 @@ header {
     align-items: center;
 }
 
-nav ul {
+nav ul, .sidebar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Horizontale Ausrichtung */
 }
 
-nav ul li {
-    margin-right: 20px; /* Abstand zwischen den Listenelementen */
+nav ul li, .sidebar ul li {
+    display: block;
+    margin-bottom: 10px; /* Abstand zwischen den Listenelementen */
+    color: #333; /* Dunkler Text */
 }
 
-nav ul li a {
+nav ul li a, .sidebar ul li a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     transition: color 0.3s; /* Übergangseffekt für die Farbänderung */
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .sidebar ul li a:hover {
     color: gold; /* Goldene Farbe beim Hovern */
 }
 
@@ -45,16 +46,16 @@ main {
 
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 60px; /* Abstand von der Navbar */
     left: 0;
-    width: 200px;
+    width: 20%; /* 20% der Bildschirmbreite */
     height: 100%;
     background-color: #333;
-    color: Black;
+    color: #fff;
     padding: 20px;
     overflow-y: auto;
 }
-aside {
 
-    color:  #333;   
+.content {
+    margin-left: 20%; /* Platzierung des Hauptinhalts neben der Seitenleiste */
 }
